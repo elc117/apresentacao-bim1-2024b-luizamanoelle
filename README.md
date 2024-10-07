@@ -30,7 +30,8 @@ Como lemos essa expressão?
 <aside>
 💡 “Pegue cada `n` da lista `[1..5]`, multiplique por 2 e coloque o resultado em uma nova lista”
 </aside>
-> **Obs:** O operador `<-` pode ser lido como "pertence a", indicando que `n` assume valores da lista `[1..5]`.
+
+ - **Obs:** O operador `<-` pode ser lido como "pertence a", indicando que `n` assume valores da lista `[1..5]`.
 
 ## Map: Um Breve Lembrete
 A função map em Haskell é utilizada para aplicar uma transformação a cada elemento de uma lista. Sua sintaxe é:
@@ -62,8 +63,9 @@ Um dos grandes diferenciais da List Comprehension é a possibilidade de incluir 
 Aqui estamos filtrando os números pares antes de aplicar a transformação. Podemos ler essa expressão assim:
 <aside>
 💡  "Pegue os números n da lista de 1 a 10, mantenha apenas os números pares (even n), e multiplique cada um deles por 2."
- - _ Os diferentes filtros são separador por virgula (",") _
 </aside>
+
+ - > **Obs:** Diferentes filtros em uma List Comprehension são separados por vírgulas (`,`), permitindo aplicar várias condições simultaneamente.
 Para fazer isso com **map**, precisaríamos usar também a função **filter**:
 
 ```haskell
