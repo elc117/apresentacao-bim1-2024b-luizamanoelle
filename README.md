@@ -30,7 +30,7 @@ Como lemos essa expressão?
 <aside>
 💡 “Pegue cada `n` da lista `[1..5]`, multiplique por 2 e coloque o resultado em uma nova lista”
 </aside>
-- *O operador <- pode ser lido como "pertence a", indicando que n assume valores da lista [1..5]*
+> **Obs:** O operador `<-` pode ser lido como "pertence a", indicando que `n` assume valores da lista `[1..5]`.
 
 ## Map: Um Breve Lembrete
 A função map em Haskell é utilizada para aplicar uma transformação a cada elemento de uma lista. Sua sintaxe é:
