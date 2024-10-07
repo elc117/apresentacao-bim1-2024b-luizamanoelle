@@ -74,7 +74,8 @@ Para fazer isso com **map**, precisaríamos usar também a função **filter**:
 map (*2) (filter even [1..10])
 -- Resultado: [4, 8, 12, 16, 20]
 ```
-### Exemplo com Múltiplos Geradores
+
+### Exemplo com múltiplos geradores
 Com List Comprehension, você também pode trabalhar com mais de um gerador. Aqui está um exemplo onde criamos pares combinando dois conjuntos de valores:
 
 ```haskell
@@ -97,6 +98,19 @@ concatMap (\x -> map (\y -> (x, y)) [3, 4]) [1, 2]
  * **map (\y -> (x, y)) [3, 4]:** Para cada x, ele mapeia os elementos de [3, 4] criando tuplas (x, y).
 
 O resultado será a concatenação de todas as listas de tuplas geradas, resultando em [(1, 3), (1, 4), (2, 3), (2, 4)].
+
+### Resolvendo os exercicios 2 e 3
+
+```haskell
+-- 2. Usando *list comprehension*, defina uma função `multN :: Int -> [Int] -> [Int]`, que receba um número `N` e uma lista, e multiplique cada elemento da lista por `N`, produzindo outra lista.
+multN :: Int -> [Int] -> [Int]
+multN n lista = [n * x | x <- lista]
+
+-- 3. Usando a função de alta ordem `map`, defina a função `multN' :: Int -> [Int] -> [Int]`, equivalente à função do exercício anterior. Atenção ao nome da função (diferente do anterior).
+multN' :: Int -> [Int] -> [Int]
+multN' n lista = map (*n) lista
+```
+ > Uso Desnecessário de List Comprehension: Para operações simples como multiplicação, usar map é mais idiomático e eficiente. List comprehensions podem ser mais pesadas para funções simples.
 
 ## Possíveis Erros em List Comprehension
 
