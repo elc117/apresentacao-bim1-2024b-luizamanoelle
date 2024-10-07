@@ -16,6 +16,7 @@ A estrutura de uma List Comprehension segue a seguinte forma:
  
 ### Exemplo: Comparação com Matemática
 Podemos ilustrar isso com um exemplo simples da matemática:
+
 $$
  { 2x | x ∈ {1, … , 5}}
 $$
