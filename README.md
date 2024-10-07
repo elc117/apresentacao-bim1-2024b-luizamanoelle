@@ -105,7 +105,6 @@ Ao trabalhar com **List Comprehension** em Haskell, alguns erros comuns podem su
  1. Erro de Sintaxe
 A **List Comprehension** tem uma sintaxe muito específica, e qualquer erro na formatação pode resultar em falhas de compilação. Um exemplo comum é esquecer os colchetes `[]` ao redor da expressão.
 
-**Exemplo de erro**:
 ```haskell
 x | x <- [1..5]  -- Sem colchetes
 
