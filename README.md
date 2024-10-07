@@ -84,17 +84,17 @@ Com List Comprehension, você também pode trabalhar com mais de um gerador. Aqu
 <aside>
 💡 "Pegue cada x da lista [1, 2], e para cada x, pegue cada y da lista [3, 4] para formar todos os pares possíveis."
 </aside>
+   > *Isso nos dá uma lista com todas as combinações de x e y daquelas listas. Usando múltiplos geradores, você pode criar combinações de valores de diferentes fontes.*
 
-*Isso nos dá uma lista com todas as combinações de x e y daquelas listas. Usando múltiplos geradores, você pode criar combinações de valores de diferentes fontes.*
-
-Para obter o mesmo resultado usando map, você pode combinar a função concatMap com uma função lambda. A função concatMap aplica uma função que retorna uma lista e, em seguida, concatena todas essas listas em uma única lista.
+Para obter o mesmo resultado usando map, você pode combinar a função **concatMap** com uma função **lambda**. A função **concatMap** aplica uma função que retorna uma lista e, em seguida, concatena todas essas listas em uma única lista.
 ```haskell
 concatMap (\x -> map (\y -> (x, y)) [3, 4]) [1, 2]
 -- Resultado: [(1, 3), (1, 4), (2, 3), (2, 4)]
 ```
-_Explicação do Código_
- * concatMap: Itera sobre cada elemento da lista [1, 2].
- * map (\y -> (x, y)) [3, 4]: Para cada x, ele mapeia os elementos de [3, 4] criando tuplas (x, y).
+**Explicação do Código**
+ * **concatMap:** Itera sobre cada elemento da lista [1, 2].
+ * **map (\y -> (x, y)) [3, 4]:** Para cada x, ele mapeia os elementos de [3, 4] criando tuplas (x, y).
+
 O resultado será a concatenação de todas as listas de tuplas geradas, resultando em [(1, 3), (1, 4), (2, 3), (2, 4)].
 
 ## Possíveis Erros em List Comprehension
