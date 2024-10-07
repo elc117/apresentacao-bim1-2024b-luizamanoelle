@@ -31,7 +31,7 @@ Como lemos essa expressão?
 💡  “Pegue cada `n` da lista `[1..5]`, multiplique por 2 e coloque o resultado em uma nova lista”
 </aside>
 
- - > **Obs:** O operador `<-` pode ser lido como "pertence a", indicando que `n` assume valores da lista `[1..5]`.
+  > **Obs:** O operador `<-` pode ser lido como "pertence a", indicando que `n` assume valores da lista `[1..5]`.
 
 ## Map: Um Breve Lembrete
 A função map em Haskell é utilizada para aplicar uma transformação a cada elemento de uma lista. Sua sintaxe é:
@@ -65,7 +65,7 @@ Aqui estamos filtrando os números pares antes de aplicar a transformação. Pod
 💡  "Pegue os números n da lista de 1 a 10, mantenha apenas os números pares (even n), e multiplique cada um deles por 2."
 </aside>
 
- - > **Obs:** Diferentes filtros em uma List Comprehension são separados por vírgulas (`,`), permitindo aplicar várias condições simultaneamente.
+  > **Obs:** Diferentes filtros em uma List Comprehension são separados por vírgulas (`,`), permitindo aplicar várias condições simultaneamente.
 
 Para fazer isso com **map**, precisaríamos usar também a função **filter**:
 
@@ -73,6 +73,46 @@ Para fazer isso com **map**, precisaríamos usar também a função **filter**:
 map (*2) (filter even [1..10])
 -- Resultado: [4, 8, 12, 16, 20]
 ```
+## Exemplo com Múltiplos Geradores
+Com List Comprehension, você também pode trabalhar com mais de um gerador. Aqui está um exemplo onde criamos pares combinando dois conjuntos de valores:
+
+```haskell
+Copiar código
+[(x, y) | x <- [1, 2], y <- [3, 4]]
+-- Resultado: [(1, 3), (1, 4), (2, 3), (2, 4)]
+```
+<aside>
+💡 Leitura: "Pegue cada x da lista [1, 2], e para cada x, pegue cada y da lista [3, 4] para formar todos os pares possíveis."
+</aside>
+Isso nos dá uma lista com todas as combinações de x e y daquelas listas. Usando múltiplos geradores, você pode criar combinações de valores de diferentes fontes.
+
+## Possíveis Erros em List Comprehension
+
+Ao trabalhar com **List Comprehension** em Haskell, alguns erros comuns podem surgir, principalmente relacionados à sintaxe e à lógica dos geradores, expressões e filtros. Aqui estão alguns erros possíveis e como evitá-los:
+
+ 1. Erro de Sintaxe
+A **List Comprehension** tem uma sintaxe muito específica, e qualquer erro na formatação pode resultar em falhas de compilação. Um exemplo comum é esquecer os colchetes `[]` ao redor da expressão.
+
+**Exemplo de erro**:
+```haskell
+x | x <- [1..5]  -- Sem colchetes
+
+[x | x <- [1..5]]  -- Correto
+```
+ 2. Tipos Incompatíveis
+Haskell é uma linguagem fortemente tipada, então é importante garantir que os tipos da expressão, geradores e filtros sejam compatíveis. 
+**Exemplo de erro**:
+```haskell
+[ x + "a" | x <- [1..5] ]  -- Tenta somar número com string
+```
+ 3. Filtros Malformados
+Se o filtro usado não for uma expressão booleana válida, Haskell não saberá como lidar com ele.
+```haskell
+[ x | x <- [1..5], x + 1 ]  -- Filtro inválido (não é uma condição booleana)
+[ x | x <- [1..5], x > 2 ]  -- Correto
+```
+ 4. Geradores Vazios
+Se a lista gerada por um dos geradores for vazia, o resultado final da List Comprehension será uma lista vazia. Esse comportamento pode ser inesperado quando há múltiplos geradores.
 
 ## Resumindo a Compreensão de Listas
 
