@@ -73,7 +73,7 @@ Para fazer isso com **map**, precisaríamos usar também a função **filter**:
 map (*2) (filter even [1..10])
 -- Resultado: [4, 8, 12, 16, 20]
 ```
-## Exemplo com Múltiplos Geradores
+### Exemplo com Múltiplos Geradores
 Com List Comprehension, você também pode trabalhar com mais de um gerador. Aqui está um exemplo onde criamos pares combinando dois conjuntos de valores:
 
 ```haskell
