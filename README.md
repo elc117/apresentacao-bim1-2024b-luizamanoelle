@@ -77,7 +77,6 @@ map (*2) (filter even [1..10])
 Com List Comprehension, você também pode trabalhar com mais de um gerador. Aqui está um exemplo onde criamos pares combinando dois conjuntos de valores:
 
 ```haskell
-Copiar código
 [(x, y) | x <- [1, 2], y <- [3, 4]]
 -- Resultado: [(1, 3), (1, 4), (2, 3), (2, 4)]
 ```
